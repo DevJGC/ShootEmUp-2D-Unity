@@ -9687,9 +9687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab:
-  - {fileID: 1760305012379962015, guid: 5e9293acf0cc82845a2f67a657211a00, type: 3}
-  - {fileID: 3590675870718880706, guid: c3782516e58ef9742b6bc85b4cab9db1, type: 3}
-  - {fileID: 3590675870718880706, guid: a694e6a2d90b17a40816e1e3af3e3dad, type: 3}
+  - {fileID: 3590675870718880706, guid: ec65055ed746f214897f0e25f4fc4f01, type: 3}
   spawnTime: 2
   spawnDelay: 2
 --- !u!4 &1910414983
