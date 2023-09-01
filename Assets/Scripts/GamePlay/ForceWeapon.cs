@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ForceWeapon : MonoBehaviour
 {
-    public float force = 1f;
-    
+    public float force = 1f; // force of weapon
+
     void Start()
     {
         

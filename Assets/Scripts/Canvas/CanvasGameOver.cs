@@ -18,17 +18,19 @@ public class CanvasGameOver : MonoBehaviour
         
     }
 
+    // Reinicia Escena
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        // kill all
+        // kill all DotWeens
         DOTween.KillAll();
     }
 
+    // Sale al menu
     public void QuitGame()
     {
         SceneManager.LoadScene("Menu");
-        // kill all
+        // kill all DotWeens
         DOTween.KillAll();
     }
 }

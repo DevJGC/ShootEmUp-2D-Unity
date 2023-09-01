@@ -12,24 +12,26 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        // Asumimos que tienes un BoxCollider2D en tu nave para determinar su tamaño
+        // BoxCollider2D en la nave para determinar su tamaño
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
+        //  Comprobar que el collider existe
         if (collider != null)
         {
             playerWidth = collider.size.x / 2;  // Dividido por 2 porque queremos la mitad del tamaño (desde el centro)
-            playerHeight = collider.size.y / 2;
+            playerHeight = collider.size.y / 2; //  Dividido por 2 porque queremos la mitad del tamaño (desde el centro)
         }
     }
 
     void Update()
     {
-        MovePlayer();
+        MovePlayer(); // Mover el jugador
     }
 
+    // Mover el jugador
     void MovePlayer()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal"); // cambiar a RAW para que el movimiento sea más rápido
+        float vertical = Input.GetAxis("Vertical"); //  cambiar a RAW para que el movimiento sea más rápido
 
         Vector3 movement = new Vector3(horizontal, vertical, 0) * speed * Time.deltaTime;
 

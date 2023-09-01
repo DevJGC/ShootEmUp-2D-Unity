@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class Shoot2AnimEvent : MonoBehaviour
 {
-    [SerializeField] private PlayerShoot playerShoot;
+    // eventos de animacion
+    [SerializeField] private PlayerShoot playerShoot; //    reference player shoot (Script)
 
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
+    //  Método para disparar 2
     public void Shoot2()
     {
         playerShoot.Shoot2();
     }
 
+    //  Método para disparar 1
     public void Shoot1()
     {
         playerShoot.Shoot1();
     }
-
 }

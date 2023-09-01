@@ -5,12 +5,12 @@ using TMPro;
 
 public class PanelLevel : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textLevel;
-    public int level;
+    [SerializeField] private TextMeshProUGUI textLevel; //  text level
+    public int level; // level
 
     void Start()
     {
-        // sinc textLevel.text to level + level text
+        // sincroniza panel level con level + text level
         textLevel.text = "NIVEL " + level;
 
     }
@@ -21,6 +21,7 @@ public class PanelLevel : MonoBehaviour
         
     }
 
+    // Cada vez que se activa sincroniza nivel con text level
     private void OnEnable()
     {
         // sinc textLevel.text to level + level text

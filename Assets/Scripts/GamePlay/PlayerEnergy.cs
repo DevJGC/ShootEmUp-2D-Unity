@@ -38,8 +38,7 @@ public class PlayerEnergy : MonoBehaviour
         // sync energy bar with energy
         energyBar.fillAmount = energy;
 
-        transform.DOMoveX(0f, 1f);
-
+        transform.DOMoveX(0f, 1f); // dotween move to right al inicio
     }
 
     void Update()
@@ -76,7 +75,7 @@ public class PlayerEnergy : MonoBehaviour
         return energy;
     }
 
-    // on trigger enter 2d compare layer
+    // Si el player toca con el layer Enemy
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // si colisiona con un enemigo
@@ -122,9 +121,9 @@ public class PlayerEnergy : MonoBehaviour
         // animatorPlayer setTrigger Respawn
         animatorPlayer.SetTrigger("Respawn");
         Invoke("MoveRight", 1f);
-
     }
 
+    // move player right al iniciar nivel
     private void MoveRight()
     {
         // lose sound
@@ -138,25 +137,26 @@ public class PlayerEnergy : MonoBehaviour
         energy = 10f;
         // sync energy bar with energy
         energyBar.fillAmount = energy/10;
-
     }
 
+    // colisionador trigger con retardo
     private void ColisionadorTrigger()
     {
         Invoke("ColisionadorActive", 1f);
     }
 
+    // colisionador active
     private void ColisionadorActive()
     {
         // circle collider 2d disable
         circleCollider2D.enabled = true;
     }
 
+    // restaurar energia
     public void RestaurarEnergia()
     {
         energy = 10f;
         // sync energy bar with energy
         energyBar.fillAmount = energy / 10;
     }
-
 }

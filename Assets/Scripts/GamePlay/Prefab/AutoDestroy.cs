@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class AutoDestroy : MonoBehaviour
 {
-    [SerializeField] private float timeToDestroy = 1f;
+    [SerializeField] private float timeToDestroy = 1f; // time to destroy
 
-    SoundExplosion soundExplosion;
+    SoundExplosion soundExplosion; // reference sound explosion
 
-    [SerializeField] private GameObject[] items;
+    [SerializeField] private GameObject[] items;    // items para instanciar
 
     // is Ship
-    [SerializeField] private bool isShip = false;
-    
+    [SerializeField] private bool isShip = false; // es la nave?
+
+    // Invoca la destrucción del objeto
     void Start()
     {
         Invoke("AutoDestroySelf", timeToDestroy);
@@ -20,11 +21,11 @@ public class AutoDestroy : MonoBehaviour
         soundExplosion = GameObject.FindWithTag("Sounds").GetComponent<SoundExplosion>();
         // play sound explosion
         soundExplosion.PlaySoundExplosion();
-        // if numero aleatorio 1 a 100 solo 20% de probabilidad
+        // if numero aleatorio 1 a 100 solo 15% de probabilidad
         int random = Random.Range(1, 101);
         if (random <= 15 && isShip)
         {
-            LaunchItem();
+            LaunchItem(); // si es menor que 15, instancia objeto
         }
 
 
@@ -36,6 +37,7 @@ public class AutoDestroy : MonoBehaviour
         
     }
 
+    // Destruye el objeto
     private void AutoDestroySelf()
     {
         
@@ -52,7 +54,7 @@ public class AutoDestroy : MonoBehaviour
         {
             return;
         }
-        // instantiate item
+        // instantiate item aleatorio
         Instantiate(items[random - 1], transform.position, Quaternion.identity);
     }
 }

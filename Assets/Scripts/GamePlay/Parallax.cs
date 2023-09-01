@@ -11,6 +11,7 @@ public class Parallax : MonoBehaviour
 
     void Start()
     {
+        // Inicializar el array de escalas
         if (backgrounds.Length != parallaxScales.Length)
         {
             Debug.LogError("Los arrays de fondos y escalas no coinciden en tamaño.");
@@ -21,6 +22,7 @@ public class Parallax : MonoBehaviour
         // Inicializar el array de anchuras
         spriteWidths = new float[backgrounds.Length];
 
+        //  Recorrer todos los fondos y establecer sus escalas de parallax
         for (int i = 0; i < backgrounds.Length; i++)
         {
             Sprite sprite = backgrounds[i].GetComponent<SpriteRenderer>().sprite;
@@ -28,9 +30,10 @@ public class Parallax : MonoBehaviour
             spriteWidths[i] = spriteWidth;
         }
     }
-
+ 
     void Update()
     {
+        // Recorrer todos los fondos
         for (int i = 0; i < backgrounds.Length; i++)
         {
             // Mover el fondo a la izquierda usando el parallaxSpeed y parallaxScales[i]
@@ -39,8 +42,8 @@ public class Parallax : MonoBehaviour
             backgrounds[i].position = newPosition;
 
             // Si la imagen ha avanzado suficientemente, reposicionarla al inicio
-            // Ahora estamos usando 0.5 * spriteWidths[i] que es la mitad de la anchura del sprite.
-            // Puedes ajustar esta multiplicación a tu gusto para determinar cuándo se reposiciona.
+            // Ahora estamos usando 0.5 * spriteWidths[i] que es la mitad de la anchura del sprite
+            // Ajustar esta multiplicación a gusto para determinar cuándo se reposiciona
             if (newPosition.x <= -0.5 * spriteWidths[i])
             {
                 Vector3 offsetPosition = newPosition;

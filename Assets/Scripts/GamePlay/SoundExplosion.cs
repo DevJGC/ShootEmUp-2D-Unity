@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SoundExplosion : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip soundExplosion;
-    
+    [SerializeField] private AudioSource audioSource; // audio source
+    [SerializeField] private AudioClip soundExplosion; // sound explosion
+
     void Start()
     {
         
@@ -18,6 +18,7 @@ public class SoundExplosion : MonoBehaviour
         
     }
 
+    // Método para reproducir sonido de explosión
     public void PlaySoundExplosion()
     {
         // play sound si no está sonando

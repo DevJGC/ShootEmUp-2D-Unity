@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
-    [SerializeField] private int levelMaster = 1; // Asegúrate de que levelMaster inicie en 1 o el valor que desees.
-    [SerializeField] private GameObject panelLevelCanvas;
-    [SerializeField] private PanelLevel panelLevelScript;
+    [SerializeField] private int levelMaster = 1; // Comienza por el nivel 1
+    [SerializeField] private GameObject panelLevelCanvas; // panel level canvas
+    [SerializeField] private PanelLevel panelLevelScript;   // panel level script
 
     [SerializeField] private const float timeBetweenLevels = 120f; // 2 minutos = 120 segundos
 
@@ -14,14 +14,16 @@ public class LevelController : MonoBehaviour
     [SerializeField] private AudioClip audioClip;
 
     // spawners levels
-    [SerializeField] private GameObject[] spawnerLevels;
+    [SerializeField] private GameObject[] spawnerLevels; // spawners levels
 
     void Start()
     {
+        //  Activar el spawner correspondiente al nivel.
         UpdateLevelPanel();
         StartCoroutine(LevelTimer());
     }
 
+    //  Corrutina para cambiar de nivel cada 2 minutos.
     private IEnumerator LevelTimer()
     {
         while (true)
@@ -31,6 +33,7 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    //  Método para cambiar de nivel.
     private void ChangeLevel()
     {
         levelMaster++;
@@ -38,7 +41,7 @@ public class LevelController : MonoBehaviour
         ActiveSpawnerLevels(); // Activar el spawner correcto después de cambiar el nivel.
     }
 
-
+    //  Método para actualizar el panel de nivel.
     private void UpdateLevelPanel()
     {
         panelLevelScript.level = levelMaster;
@@ -47,11 +50,13 @@ public class LevelController : MonoBehaviour
         audioSource.PlayOneShot(audioClip);
     }
 
+    //  Método para cerrar el panel de nivel.
     private void ClosePanelLevel()
     {
         panelLevelCanvas.SetActive(false);
     }
 
+    //  Método para activar el spawner correspondiente al nivel.
     public void ActiveSpawnerLevels()
     {
         // Desactivar todos los spawners antes de activar el correspondiente.
@@ -92,5 +97,4 @@ public class LevelController : MonoBehaviour
                 break;
         }
     }
-
 }

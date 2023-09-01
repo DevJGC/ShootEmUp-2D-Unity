@@ -18,6 +18,7 @@ public class ExitButton : MonoBehaviour
 
     }
 
+    // Sale a Menu
     public void ExitGame()
     {
         // kill all dotween

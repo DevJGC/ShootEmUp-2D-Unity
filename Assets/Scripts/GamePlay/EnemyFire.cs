@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class EnemyFire : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyBullet;
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private Transform firePoint2;
-    [SerializeField] private Transform firePoint3;
+    [SerializeField] private GameObject enemyBullet; // enemy bullet
+    [SerializeField] private Transform firePoint;   // fire point
+    [SerializeField] private Transform firePoint2;  // fire point 2
+    [SerializeField] private Transform firePoint3;  // fire point 3
 
-    [SerializeField] private float fireRate;
+    [SerializeField] private float fireRate;    // fire rate
 
     // sound
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioClipFire;
 
-    [SerializeField] bool noFire;// false dispara
+    [SerializeField] bool noFire; // false dispara y true no dispara
 
 
     void Start()
     {
         // find audiosource object tag Sounds
         audioSource = GameObject.FindGameObjectWithTag("Sounds").GetComponent<AudioSource>();
-        
+
+        //  if noFire is false, invoke repeating fire
         if (noFire == false)
         {
             InvokeRepeating("Fire", 0f, fireRate);
@@ -35,6 +36,7 @@ public class EnemyFire : MonoBehaviour
 
     }
 
+    // fire function instantiate enemy bullet
     void Fire()
     {
         Instantiate(enemyBullet, firePoint.position, firePoint.rotation);

@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class LivesPlayer : MonoBehaviour
 {
-    public int lives;
-    [SerializeField] GameObject[] livesIcons;
+    public int lives; // vidas del jugador
+    [SerializeField] GameObject[] livesIcons; // iconos de vidas canvas
 
     // sound
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioGameOver;
 
-    [SerializeField] GameManager gameManager;
+    [SerializeField] GameManager gameManager; // game manager
 
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         // press space to lose life
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            LoseLife();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    LoseLife();
+        //}
 
     }
 
+    // Método para perder una vida.
     public void LoseLife()
     {
         lives--;
@@ -39,6 +40,7 @@ public class LivesPlayer : MonoBehaviour
         }
     }
 
+    // Método para añadir una vida.
     public void AddLife()
     {
         if (lives < 3)
@@ -47,7 +49,8 @@ public class LivesPlayer : MonoBehaviour
             livesIcons[lives - 1].SetActive(true);
         }
     }
-    
+
+    // Game Over
     private void GameOver()
     {
         // play gameover

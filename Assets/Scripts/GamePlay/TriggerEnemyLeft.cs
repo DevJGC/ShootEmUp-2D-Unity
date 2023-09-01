@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TriggerEnemyLeft : MonoBehaviour
 {
+    // Destructor de todo lo que salga por la parte izquierda de la pantalla
 
     void Start()
     {
@@ -16,7 +17,7 @@ public class TriggerEnemyLeft : MonoBehaviour
         
     }
 
-    // ontrigger enter 2d layer 6 destroy
+    // Destruye todo lo que sea Enemy del Layer 3
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 3)

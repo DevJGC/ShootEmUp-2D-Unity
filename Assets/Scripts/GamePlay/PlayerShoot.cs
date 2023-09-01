@@ -13,15 +13,14 @@ public class PlayerShoot : MonoBehaviour
 
     // prefabs
     [SerializeField] private GameObject shoot1Prefab; // prefab de la bala
-    [SerializeField] private GameObject shoot2Prefab; // prefab de la bala
-    [SerializeField] private GameObject shootBombPrefab; // prefab de la bala
+    [SerializeField] private GameObject shoot2Prefab; // prefab de la bala 2
+    [SerializeField] private GameObject shootBombPrefab; // prefab de bomba
     
     void Start()
     {
         
     }
     
-
     void Update()
     {
         // mientras se pulsa el botón izquierdo del ratón, se ejecuta la animación de disparo Shoot2
@@ -42,48 +41,47 @@ public class PlayerShoot : MonoBehaviour
             shootBomb.gameObject.GetComponent<Animator>().SetTrigger("Shoot");
             ShootBomb();
         }
-
     }
-    
+
+    // Método para disparar
     public void Shoot1()
     {
         Instantiate(shoot1Prefab, shoot1.transform.position, shoot1.transform.rotation);
     }
 
+    // Método para disparar 2
     public void Shoot2()
     {    
         Instantiate(shoot2Prefab, shoot2.transform.position, shoot2.transform.rotation);
     }
 
+    // Método para disparar bomba
     private void ShootBomb()
     {
         Instantiate(shootBombPrefab, shootBomb.transform.position, shootBomb.transform.rotation);
     }
 
-    // enable bool shoot1Enabled
+    // Activa disparo especial
     public void EnableShoot1()
     {
         shoot1Enabled = true;
     }
 
-    // disable bool shoot1Enabled
+    // Desactiva disparo especial
     public void DisableShoot1()
     {
         shoot1Enabled = false;
     }
 
-    // enable bool shootBoombEnabled
+    // Activa disparo bomba
     public void EnableShootBoomb()
     {
         shootBoombEnabled = true;
     }
 
-    // disable bool shootBoombEnabled
+    //  Desactiva disparo bomba
     public void DisableShootBoomb()
     {
         shootBoombEnabled = false;
     }
-
-
-
 }

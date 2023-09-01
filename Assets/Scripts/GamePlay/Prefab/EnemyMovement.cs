@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private Vector2 enemyMov;
+    [SerializeField] private Vector2 enemyMov; // enemy movement
 
     void Start()
     {
@@ -14,7 +14,7 @@ public class EnemyMovement : MonoBehaviour
     
     void Update()
     {
-        transform.Translate(enemyMov * Time.deltaTime);
+        transform.Translate(enemyMov * Time.deltaTime); // enemy movement en 2 vectores
 
     }
 }

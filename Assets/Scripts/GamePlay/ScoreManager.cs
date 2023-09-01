@@ -5,36 +5,25 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager scoreManagerInstance;
+    public static ScoreManager scoreManagerInstance; // singleton
 
-    [SerializeField] int score;
-    [SerializeField] TextMeshProUGUI scoreText;
-    //[SerializeField] TextMesh recordText;
+    [SerializeField] int score;     // score
+    [SerializeField] TextMeshProUGUI scoreText;     // score text
 
     private void Awake()
     {
-        scoreManagerInstance = this;
+        scoreManagerInstance = this; // singleton
     }
 
     private void Start()
     {
-        
-        scoreText.text = score.ToString();
-        //    int recordTemp = PlayerPrefs.GetInt("record");
-        //    recordText.text = "Record: " + recordTemp.ToString();
+        scoreText.text = score.ToString(); // score text
     }
 
+    //  Método para añadir puntos al marcador.
     public void AddScore(int s)
     {
         score += s;
         scoreText.text = score.ToString();
     }
-
-    //public void CheckRecord()
-    //{
-    //    if (score > PlayerPrefs.GetInt("record"))
-    //    {
-    //        PlayerPrefs.SetInt("record", score);
-    //    }
-    //}
 }

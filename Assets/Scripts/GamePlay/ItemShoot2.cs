@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ItemShoot2 : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
+    [SerializeField] private GameManager gameManager; // reference gamemanager
 
-    [SerializeField] private GameObject healthUpParticle;
+    [SerializeField] private GameObject healthUpParticle;  // reference healthupparticle (prefab)
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class ItemShoot2 : MonoBehaviour
         
     }
 
-    // ontriggerenter 2d tag player destroy
+    // Si el jugador toca el item shoot2
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

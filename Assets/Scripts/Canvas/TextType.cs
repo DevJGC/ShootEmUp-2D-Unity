@@ -6,21 +6,24 @@ using TMPro;
 public class TextType : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMeshProUGUI;
-    [SerializeField] private float typingSpeed = 0.1f; // puedes ajustar este valor para cambiar la velocidad de escritura
-    [SerializeField] private string fullText; // Texto completo que deseas mostrar
+    [SerializeField] private float typingSpeed = 0.1f; // Ajustar este valor para cambiar la velocidad de escritura
+    [SerializeField] private string fullText; // Texto completo a mostrar
     private string currentText = ""; // Texto actual en la UI
 
     // sounds
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioClip;
 
+    
     void Start()
     {
+        // actualiza texto canvas y llama a la corrutina
         fullText = textMeshProUGUI.text;
         textMeshProUGUI.text = ""; // Comienza con el texto vacío
         StartCoroutine(TypeText());
     }
 
+    // Corrutina para escribir el texto letra por letra
     IEnumerator TypeText()
     {
         yield return new WaitForSeconds(3); // Espera 2 segundos
@@ -40,6 +43,11 @@ public class TextType : MonoBehaviour
 
     void Update()
     {
-        // Aquí puedes poner cualquier lógica de actualización si es necesario
+        // Para la corrutina y muestra el texto completo al pulsar la barra espaciadora
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    StopAllCoroutines(); // Detiene la corrutina
+        //    textMeshProUGUI.text = fullText; // Muestra el texto completo
+        //}
     }
 }

@@ -6,8 +6,8 @@ public class EnemyEnergy : MonoBehaviour
 {
     public float enemyForce = 1f; // Energía del enemigo
 
-    [SerializeField] GameObject prefabExplosionShip;
-    [SerializeField] int scoreEnemy;
+    [SerializeField] GameObject prefabExplosionShip; // Prefab de la explosión de la nave
+    [SerializeField] int scoreEnemy; // Puntuación del enemigo
 
     public bool isBoss = false; // Variable para determinar si el enemigo es un Boss
 
@@ -21,9 +21,10 @@ public class EnemyEnergy : MonoBehaviour
 
     }
 
+    //  Cuando colisiona con el Layer Player o con el Layer Weapon
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.layer == 6)    
         {
             // resta ForceWeapon force a enemyForce
             enemyForce -= collision.gameObject.GetComponent<ForceWeapon>().force;
@@ -37,12 +38,13 @@ public class EnemyEnergy : MonoBehaviour
             if (shootComponent != null && shootComponent.laserOrBomb)
             {
                 Camera mainCamera = Camera.main; // Obtén la cámara principal
-                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy"); // Encuentra todos los enemigos
+                //  Recorre todos los enemigos
                 foreach (GameObject enemy in enemies)
                 {
-                    EnemyEnergy enemyEnergyComponent = enemy.GetComponent<EnemyEnergy>();
+                    EnemyEnergy enemyEnergyComponent = enemy.GetComponent<EnemyEnergy>(); // Obtén el componente EnemyEnergy
 
-                    Vector3 viewportPos = mainCamera.WorldToViewportPoint(enemy.transform.position);
+                    Vector3 viewportPos = mainCamera.WorldToViewportPoint(enemy.transform.position); // Verifica si el enemigo está dentro de la vista de la cámara
                     // Verifica si el enemigo está dentro de la vista de la cámara
                     if (viewportPos.x >= 0 && viewportPos.x <= 1 && viewportPos.y >= 0 && viewportPos.y <= 1)
                     {
@@ -71,7 +73,7 @@ public class EnemyEnergy : MonoBehaviour
         }
     }
 
-    // check enemyForce
+    // check enemyForce and destroy gameObject
     private void CheckEnemyForce()
     {
         if (enemyForce <= 0)

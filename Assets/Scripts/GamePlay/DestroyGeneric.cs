@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class DestroyGeneric : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
     }
 
-    // ontriggerenter 2d layer player destroy
+    // Destruye todo lo que es layer 6  (enemigos)
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6)

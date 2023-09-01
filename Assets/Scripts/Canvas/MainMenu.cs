@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour
         
     }
 
+    // Sonido al pulsar el botón de jugar
     public void PlayGame()
     {
         // play sound button
@@ -28,12 +29,13 @@ public class MainMenu : MonoBehaviour
         Invoke("TimetoPlay", 1f);
     }
 
+    // Va al juego
     void TimetoPlay()
     {
-        // load scene game play
         SceneManager.LoadScene("GamePlay");
     }
 
+    // Sale del juego
     public void ExitGame()
     {
         Application.Quit();
