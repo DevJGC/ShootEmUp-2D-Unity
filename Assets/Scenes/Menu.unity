@@ -1326,8 +1326,9 @@ GameObject:
   - component: {fileID: 1724622702}
   - component: {fileID: 1724622704}
   - component: {fileID: 1724622703}
+  - component: {fileID: 1724622705}
   m_Layer: 5
-  m_Name: "\xCFnstrucciones"
+  m_Name: Instrucciones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1373,7 +1374,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "Instrucciones: Con las flechas o AWSD mueves la nave. Con el bot\xF3n
+    izquierdo del rat\xF3n disparas. Y con el bot\xF3n derecho, lanzas bombas cuando
+    la tengas."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a20b6d5cb024f544787953e74d15a1c6, type: 2}
   m_sharedMaterial: {fileID: -3779775974330164148, guid: a20b6d5cb024f544787953e74d15a1c6, type: 2}
@@ -1400,8 +1403,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 52
+  m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1436,7 +1439,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -279.75522, y: 0, z: -297.9507, w: -222.89436}
+  m_margin: {x: -275.20636, y: 0, z: -288.85303, w: -222.89436}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1450,6 +1453,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724622701}
   m_CullTransparentMesh: 1
+--- !u!114 &1724622705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724622701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0edcfdeb092964d9182f6284e74a55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1724622703}
+  typingSpeed: 0.05
+  fullText: "Instrucciones: Con las flechas o AWSD diriges la nave. Con el bot\xF3n
+    izquierdo mantenido, disparas. Y con el bot\xF3n derecho, lanzas bomba cuando
+    la tengas."
+  audioSource: {fileID: 72300089}
+  audioClip: {fileID: 8300000, guid: 88968dfca512cce479a63411a4bcc6ae, type: 3}
 --- !u!1 &1779829255
 GameObject:
   m_ObjectHideFlags: 0
