@@ -1380,7 +1380,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -3414,7 +3414,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -9688,8 +9688,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab:
   - {fileID: 3590675870718880706, guid: ec65055ed746f214897f0e25f4fc4f01, type: 3}
-  spawnTime: 2
-  spawnDelay: 2
+  spawnTime: 0.75
+  spawnDelay: 1
 --- !u!4 &1910414983
 Transform:
   m_ObjectHideFlags: 0
@@ -10102,12 +10102,14 @@ MonoBehaviour:
   canvasGameOver: {fileID: 1314151513}
   restaItemShoot: 0.0001
   restaItemBomb: 0.001
-  restaItemShield: 0.0005
+  restaItemShield: 0.001
   fillMultiple: {fileID: 1801475709}
   fillBomb: {fileID: 348858151}
   fillShield: {fileID: 1192277384}
   audioSource: {fileID: 65864192}
   audioClipItem: {fileID: 8300000, guid: 3910d26b0635c5a448677cd25bcc7eb5, type: 3}
+  duration: 0.3
+  magnitude: 0.35
 --- !u!4 &1983300773
 Transform:
   m_ObjectHideFlags: 0

@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
     // audio clip
     [SerializeField] AudioClip audioClipItem;
 
+    //temblor camara
+    [SerializeField] float duration = 0.2f;  // Duración del temblor en segundos
+    [SerializeField] float magnitude = 0.2f;  // Magnitud del temblor
+
     void Start()
     {
         
@@ -90,12 +94,39 @@ public class GameManager : MonoBehaviour
         Destroy(player[0],1f);
     }
 
-    // public void Shake camera
+    // temblor de cámara
     public void ShakeCamera()
     {
-        // dot tween shake camera
-        Camera.main.DOShakePosition(0.5f, 0.5f, 10, 90, true);
+        StartCoroutine(Shake());
     }
+
+    IEnumerator Shake()
+    {
+        Vector3 originalPosition = Camera.main.transform.position;
+        float elapsed = 0.0f;
+        float randomStart = Random.Range(-1000.0f, 1000.0f);
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float percentComplete = elapsed / duration;
+
+            // Genera valores aleatorios usando Perlin noise
+            float offsetX = Mathf.PerlinNoise(randomStart, Time.time * 1.0f) * 2.0f - 1.0f;
+            float offsetY = Mathf.PerlinNoise(randomStart + 1.0f, Time.time * 1.0f) * 2.0f - 1.0f;
+
+            offsetX *= magnitude * (1.0f - percentComplete);
+            offsetY *= magnitude * (1.0f - percentComplete);
+
+            Camera.main.transform.position = new Vector3(originalPosition.x + offsetX, originalPosition.y + offsetY, originalPosition.z);
+
+            yield return null;
+        }
+
+        // Restablecer la posición original de la cámara
+        Camera.main.transform.position = originalPosition;
+    }
+    
 
     // activa disparo especial
     public void Shoot2Active()
