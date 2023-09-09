@@ -7,7 +7,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] private GameObject panelLevelCanvas; // panel level canvas
     [SerializeField] private PanelLevel panelLevelScript;   // panel level script
 
-    [SerializeField] private const float timeBetweenLevels = 120f; // 2 minutos = 120 segundos
+    [SerializeField] private const float timeBetweenLevels = 90f; // 2 minutos = 120 segundos
 
     // audio
     [SerializeField] private AudioSource audioSource;

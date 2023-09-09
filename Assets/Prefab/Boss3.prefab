@@ -166,9 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b8ecc597c6b4c4aa86e7da7aa3d407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyForce: 2
+  enemyForce: 4
   prefabExplosionShip: {fileID: 6988335503216932591, guid: 5efbba23ee3b2f548ab67ad480eb9e8a, type: 3}
-  scoreEnemy: 5
+  scoreEnemy: 60
   isBoss: 1
 --- !u!58 &2268903770188537817
 CircleCollider2D:

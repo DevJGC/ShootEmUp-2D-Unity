@@ -10100,9 +10100,9 @@ MonoBehaviour:
   - {fileID: 1466721708}
   - {fileID: 1557458485}
   canvasGameOver: {fileID: 1314151513}
-  restaItemShoot: 0.0001
-  restaItemBomb: 0.001
-  restaItemShield: 0.001
+  restaItemShoot: 0.0005
+  restaItemBomb: 0.005
+  restaItemShield: 0.005
   fillMultiple: {fileID: 1801475709}
   fillBomb: {fileID: 348858151}
   fillShield: {fileID: 1192277384}

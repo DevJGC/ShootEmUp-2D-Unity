@@ -36,7 +36,7 @@ public class shoot : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
         // add impulse to the bullet
         rb.AddForce(transform.right * speed, ForceMode2D.Impulse);

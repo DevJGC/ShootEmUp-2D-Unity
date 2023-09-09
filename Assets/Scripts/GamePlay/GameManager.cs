@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     }
     
 
-    void Update()
+    void FixedUpdate()
     {
         // if player no existe return
         if (player[0] == null)
